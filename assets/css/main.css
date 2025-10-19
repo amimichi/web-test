@@ -360,12 +360,12 @@ section {
   right: -70px;
 }
 
-/* CARD "POKÉMON" - ESTILO MELHORADO */
+/* CARD "POKÉMON" - ESTILO MEJORADO */
 .card {
-    /* Dimensões típicas de uma card compacta, similar ao tamanho de uma carta real */
-    min-width: 200px; /* Reduzido para caber mais no carrossel */
+    /* AJUSTE DIMENSIONES TIPO CARTA POKÉMON */
+    min-width: 250px;
     width: 280px;
-    height: 400px; /* Altura padrão para todas as cards */
+    height: 420px;
 
     background: var(--color-bg-alt);
     border-radius: var(--border-radius);
@@ -380,7 +380,7 @@ section {
     z-index: 1;
 }
 
-/* Borda holográfica (já estava bom, mantido) */
+/* Borde holográfico (Mantenido) */
 .card::before {
     content: "";
     position: absolute;
@@ -405,33 +405,36 @@ section {
     filter: blur(5px);
 }
 
-/* NOVO: Estilo para o cabeçalho da carta (topo) */
+/* NUEVO: Contenedor del Título y Detalle (Topo de la carta) */
 .card__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.05); /* Levemente mais claro */
-    border-bottom: 1px solid var(--color-accent-soft);
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid var(--color-accent); /* Borde de división más prominente */
 }
 
-/* NOVO: Ícone no canto superior direito */
-.card__header-icon {
+/* NUEVO: Título principal en el header (Nombre a la izquierda) */
+.card__header-title {
     font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+/* NUEVO: Ícono de detalle/nivel en el header (a la derecha) */
+.card__header-icon {
+    font-size: 1.5rem;
     color: var(--color-accent);
 }
 
-/* Categoria agora no header */
+/* card__category antigua reemplazada */
 .card__category {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    text-shadow: 0 0 5px var(--color-accent);
-    margin-bottom: 0; /* Removido o margin-bottom antigo */
+    display: none;
 }
 
 .card__image-container {
-    height: 150px; /* Altura da área de imagem da carta */
+    height: 180px; /* Área de imagen más grande */
     background: linear-gradient(to top, var(--color-bg-alt) 10%, var(--color-bg) 100%);
     display: flex;
     align-items: center;
@@ -448,9 +451,21 @@ section {
     padding: 1.5rem 1.2rem;
     position: relative;
     z-index: 2;
-    flex-grow: 1; /* Permite que o conteúdo expanda */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* NUEVO: Estilo para el Tipo/Categoría de la carta (dentro del contenido) */
+.card__type {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .card__title {
@@ -463,16 +478,15 @@ section {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
     line-height: 1.4;
-    flex-grow: 1; /* Empurra o CTA para baixo */
+    flex-grow: 1; /* Empuja el CTA hacia abajo */
 }
-
 .card__cta {
     display: inline-block;
     margin-top: 1rem;
     color: var(--color-accent);
     font-weight: 600;
     transition: var(--transition);
-    align-self: flex-start; /* Alinha o botão à esquerda */
+    align-self: flex-start;
 }
 .card:hover .card__cta {
     transform: translateX(5px);
@@ -480,15 +494,13 @@ section {
 
 /* Estilos para cartas volteadas (reverso) */
 .card-back-only {
-    /* Mantém as dimensões padrão da card */
     min-width: 280px;
-    height: 400px;
+    height: 420px; /* Altura consistente */
 
     background: var(--color-bg-alt);
     border-radius: var(--border-radius);
-    border: 3px solid var(--color-accent); /* Borda mais forte */
+    border: 3px solid var(--color-accent); /* Borde más fuerte */
 
-    /* Efeito de sombreamento para dar profundidade ao reverso */
     box-shadow: 0 0 40px rgba(255, 120, 60, 0.2);
 
     display: flex;
@@ -506,45 +518,39 @@ section {
     justify-content: center;
     position: relative;
 
-    /* APLICAÇÃO DA IMAGEM 1.PNG COMO FUNDO (Efeito Pokébola) */
-    /* A rota é relativa ao arquivo CSS (assets/css) */
+    /* IMAGEN 1.PNG COMO FONDO (Efecto Pokébola) */
     background-image: url('../img/logos/1.png');
-    background-size: 120%; /* Aumenta um pouco para dar zoom */
+    background-size: 120%;
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0.6; /* Transparência para parecer mais um fundo de carta */
+    opacity: 0.6;
 
-    /* Gradiente sutil para escurecer as bordas */
     background-color: var(--color-bg);
     box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.8);
 }
 
-/* O elemento img.card-back-logo foi removido do HTML, mas deixamos o CSS por precaução */
 .card-back-logo {
     display: none;
 }
 
-
-/* Estilos para a carta do jogador (Ajuste de altura para consistência) */
+/* Estilos para la carta del jugador (Ajuste de altura para consistencia) */
 .card-player {
-    min-width: 280px; /* Consistente com a card padrão */
-    height: 400px; /* Consistente com a card padrão */
+    min-width: 280px;
+    height: 420px; /* Consistente con la card estándar */
 }
-
-/* Os estilos .player-avatar, .player-stats, .mushin-icon, etc., podem ser mantidos */
-
-/* ... (O restante do seu CSS) ... */
 
 .player-avatar {
-  width: 120px;
-  height: 120px;
-  background: linear-gradient(135deg, var(--color-accent), #ff6b6b);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
+    width: 120px;
+    height: 120px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--color-bg);
 }
+
 
 .player-stats {
   display: flex;
@@ -575,14 +581,16 @@ section {
 
 /* Estilos para Mushin App icon */
 .mushin-icon {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, var(--color-accent), #ff6b6b);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
+    width: 120px;
+    height: 120px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--color-bg);
+    box-shadow: 0 0 20px var(--color-accent);
 }
 
 /* FAQ - ESTILO MEJORADO */
