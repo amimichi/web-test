@@ -51,17 +51,24 @@ header {
   border-bottom: none;
 }
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-text);
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
 }
-.logo span {
-  color: var(--color-accent);
+
+/* Ajuste del tamaño de la imagen para Mobile First (¡Más grande!) */
+.logo-img {
+    height: 3.5rem; /* AUMENTADO: 3.5rem para móviles y tablets */
+    width: auto;
+    transition: var(--transition);
 }
+
+/* Ajuste de tamaño para escritorio (Ahora más grande que en móvil) */
+header .logo-img {
+    height: 4.5rem; /* AUMENTADO: 4.5rem para pantallas grandes */
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -659,6 +666,135 @@ section {
   color: var(--color-text);
 }
 
+/* ESTILOS ESPECÍFICOS DE LA PÁGINA DE CONTACTO (Añadido a la Sección 4) */
+.contact-hero {
+    min-height: 50vh;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+}
+
+.contact-hero .hero-blob {
+    opacity: 0.1;
+}
+
+.contact-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.contact-section {
+    padding: 4rem 5% 8rem;
+    background: var(--color-bg-alt);
+    align-items: flex-start;
+}
+
+.contact-container {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-form-wrapper,
+.contact-info-wrapper {
+    flex: 1;
+}
+
+/* --- ESTILOS DEL FORMULARIO --- */
+.contact-form {
+    background: var(--color-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-accent-soft);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-accent);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-text-secondary);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 10px var(--color-accent-soft);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: hsla(120, 60%, 40%, 0.2);
+    color: var(--color-text);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* --- ESTILOS DE LA INFORMACIÓN DE CONTACTO --- */
+.contact-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 1rem;
+}
+
+.contact-info-item {
+    background: var(--color-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-accent-soft);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-item p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
 /* FOOTER */
 footer {
   padding: 4rem 5% 2rem;
@@ -683,7 +819,13 @@ footer {
   .carousel-arrow {
     display: none;
   }
+
+  /* Ajustes para Contacto en tabletas */
+  .contact-container {
+    flex-direction: column;
+  }
 }
+
 @media (max-width: 768px) {
   header {
     padding: 1rem 5%;
@@ -703,25 +845,25 @@ footer {
   .header-actions .btn-contact-header {
     display: none;
   }
-}
 
-
-
-/* ========== 5. RESPONSIVE (Adición para Scroll Horizontal de Cards) ========== */
-@media (max-width: 768px) {
-  /* ... (estilos existentes) ... */
-
-  /* NUEVO: Permite el scroll horizontal de las tarjetas en móviles */
+  /* Responsive de Cards con Scroll Horizontal */
   .carousel-track-container {
-    overflow-x: auto; /* Habilita el scroll horizontal si el contenido desborda */
-    -webkit-overflow-scrolling: touch; /* Mejora la inercia del scroll en iOS */
-    padding-bottom: 15px; /* Espacio para que la barra de scroll no tape las cards */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+  }
+  .carousel-track {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 
-  /* Ajuste para que el track no use flex-wrap y permita el scroll */
-  .carousel-track {
-    /* Desactivar el ajuste automático para forzar el scroll horizontal */
-    flex-wrap: nowrap;
-    justify-content: flex-start; /* Asegura que las tarjetas empiecen desde la izquierda */
+  /* Ajustes para Contacto en móviles */
+  .contact-form-wrapper,
+  .contact-info-wrapper {
+      width: 100%;
+  }
+  .contact-section {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
   }
 }
