@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amimichi - Sport Tech Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header>
+        <a href="#inicio" class="logo" aria-label="Amimichi, ir al inicio">🐱 <span>Ami</span>michi</a>
+        <div class="header-actions">
+            <a href="contact.html" class="btn-contact-header" data-translate="contact">Contáctanos</a>
+            <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="side-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="side-menu" id="side-menu">
+        <nav>
+            <a href="#quienes-somos" data-translate="about">Quiénes Somos</a>
+            <a href="#servicios" data-translate="services">Servicios</a>
+            <a href="#clientes" data-translate="clients">Clientes</a>
+            <a href="#productos" data-translate="products">Productos</a>
+            <a href="contact.html" class="btn-contact-header" data-translate="contact">Contáctanos</a>
+        </nav>
+        <div class="language-selector">
+            <label for="languageSelect" data-translate="language">Idioma:</label>
+            <select id="languageSelect">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="pt">🇵🇹 Português</option>
+                <option value="ja">🇯🇵 日本語</option>
+            </select>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-blob"></div>
+            <h1 class="reveal" data-translate="hero-title">Potenciando el deporte con tecnología a la medida</h1>
+            <p class="subtitle reveal" data-translate="hero-subtitle">Amimichi: Sport Tech Studio</p>
+            <div class="cta-buttons reveal">
+                <a href="contact.html" class="btn btn-primary" data-translate="cta-contact">Contáctanos</a>
+                <a href="#servicios" class="btn btn-secondary" data-translate="cta-services">Ver Servicios</a>
+            </div>
+        </section>
+
+        <section id="quienes-somos">
+            <h2 class="section-title reveal" data-translate="about-title">Quiénes Somos</h2>
+            <p class="section-description reveal" data-translate="about-text">
+                Somos un equipo apasionado por la tecnología y el deporte. En Amimichi, creemos que cada desafío deportivo merece una solución tecnológica personalizada. Combinamos innovación, experiencia y creatividad para desarrollar productos y servicios que transforman la manera en que se vive el deporte.
+            </p>
+        </section>
+
+        <section id="servicios">
+            <h2 class="section-title reveal" data-translate="services-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-item reveal">
+                    <div class="service-icon">📊</div>
+                    <h3 data-translate="service-consulting-title">Consultoría Estratégica</h3>
+                    <p data-translate="service-consulting-desc">Analizamos tus procesos para identificar oportunidades y diseñar la mejor solución tecnológica.</p>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-icon">💻</div>
+                    <h3 data-translate="service-development-title">Desarrollo a Medida</h3>
+                    <p data-translate="service-development-desc">Creamos software, apps y plataformas desde cero, diseñadas para tus necesidades.</p>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-icon">🧠</div>
+                    <h3 data-translate="service-ai-title">Análisis de Datos e IA</h3>
+                    <p data-translate="service-ai-desc">Utilizamos IA y análisis de datos para generar insights que potencien el rendimiento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="clientes">
+            <h2 class="section-title reveal" data-translate="clients-title">Confían en Nosotros</h2>
+            <p class="section-description reveal" data-translate="clients-text">
+                Hemos tenido el placer de colaborar con clubes, federaciones y startups líderes en el mundo del deporte.
+            </p>
+            <div class="carousel-container reveal">
+                <div class="carousel">
+                    <button class="carousel-arrow left" aria-label="Cliente anterior">‹</button>
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="clientTrack">
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                             Card del jugador Diego Martínez (visible) 
+                            <div class="card card-player">
+                                <div class="card__image-container">
+                                    <div class="player-avatar">⚽</div>
+                                </div>
+                                <div class="card__content">
+                                    <div class="card__category" data-translate="client-player-type">⭐ ATLETA</div>
+                                    <h3 class="card__title" data-translate="client-player-name">Diego Martínez</h3>
+                                    <p class="card__description" data-translate="client-player-position">Mediocampista Profesional</p>
+                                    <div class="player-stats">
+                                        <div class="stat">
+                                            <span class="stat-label" data-translate="client-player-stat1">Velocidad</span>
+                                            <span class="stat-value">92</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-label" data-translate="client-player-stat2">Técnica</span>
+                                            <span class="stat-value">88</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-label" data-translate="client-player-stat3">Resistencia</span>
+                                            <span class="stat-value">95</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow right" aria-label="Siguiente cliente">›</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos">
+            <h2 class="section-title reveal" data-translate="products-title">Nuestros Productos</h2>
+            <div class="carousel-container reveal">
+                 <div class="carousel">
+                    <button class="carousel-arrow left" aria-label="Producto anterior">‹</button>
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="productTrack">
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                             Mushin App Card (visible con botón) 
+                            <a href="mushin.html" class="card">
+                                <div class="card__image-container">
+                                    <div class="mushin-icon">🧘</div>
+                                </div>
+                                <div class="card__content">
+                                    <div class="card__category" data-translate="product-category-app">📲 Aplicación</div>
+                                    <h3 class="card__title" data-translate="product-mushin-title">Mushin App</h3>
+                                    <p class="card__description" data-translate="product-mushin-desc">Optimiza el rendimiento con análisis de datos en tiempo real y entrenamiento personalizado.</p>
+                                    <span class="card__cta" data-translate="product-mushin-cta">Conocer más →</span>
+                                </div>
+                            </a>
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                             Card volteada 
+                            <div class="card card-back-only">
+                                <div class="card__back">
+                                    <img src="assets/img/logos/amimichi-icon.png" alt="Amimichi" class="card-back-logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow right" aria-label="Siguiente producto">›</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2 class="section-title reveal" data-translate="faq-title">Preguntas Frecuentes</h2>
+            <div class="faq-container reveal">
+                <details class="faq-item">
+                    <summary data-translate="faq-q1-title">¿Qué tipo de soluciones desarrollan?</summary>
+                    <div class="faq-answer">
+                        <p data-translate="faq-q1-answer">Nos especializamos en todo el espectro del sport tech: desde aplicaciones móviles para atletas y fans, hasta plataformas de gestión para clubes y análisis de datos con IA para optimizar el rendimiento.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary data-translate="faq-q2-title">¿Trabajan con deportes específicos?</summary>
+                    <div class="faq-answer">
+                        <p data-translate="faq-q2-answer">Nuestra metodología es adaptable a cualquier disciplina deportiva. Hemos trabajado en proyectos de fútbol, artes marciales, fitness, e-sports y más. ¡Nos apasionan todos los desafíos!</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary data-translate="faq-q3-title">¿Cuál es el proceso para iniciar un proyecto?</summary>
+                    <div class="faq-answer">
+                        <p data-translate="faq-q3-answer">Todo comienza con una conversación. Contáctanos a través de nuestra página de contacto para agendar una reunión inicial sin costo, donde entenderemos tus necesidades y te propondremos un plan de acción.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="final-cta">
+            <h2 class="cta-box-title reveal" data-translate="final-cta-title">¿Listo para transformar tu proyecto deportivo?</h2>
+            <p class="section-description reveal" data-translate="final-cta-text">Hablemos de cómo la tecnología puede llevarte al siguiente nivel.</p>
+            <a href="contact.html" class="btn btn-primary reveal" data-translate="cta-contact">Contáctanos ahora</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Amimichi. Sport Tech Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
