@@ -362,7 +362,7 @@ section {
 
 /* CARD "POKÉMON" - ESTILO MEJORADO */
 .card {
-    /* AJUSTE DIMENSIONES TIPO CARTA POKÉMON */
+    /* AJUSTE DIMENSIONES TIPO CARTA POKÉMON: Proporción rectangular */
     min-width: 250px;
     width: 280px;
     height: 420px;
@@ -412,17 +412,17 @@ section {
     align-items: center;
     padding: 0.75rem 1rem;
     background: rgba(255, 255, 255, 0.05);
-    border-bottom: 2px solid var(--color-accent); /* Borde de división más prominente */
+    border-bottom: 2px solid var(--color-accent); /* Borde de división prominente */
 }
 
-/* NUEVO: Título principal en el header (Nombre a la izquierda) */
+/* Título principal en el header (Nombre a la izquierda) */
 .card__header-title {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-text);
 }
 
-/* NUEVO: Ícono de detalle/nivel en el header (a la derecha) */
+/* Ícono de detalle/nivel en el header (a la derecha) */
 .card__header-icon {
     font-size: 1.5rem;
     color: var(--color-accent);
@@ -478,7 +478,7 @@ section {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
     line-height: 1.4;
-    flex-grow: 1; /* Empuja el CTA hacia abajo */
+    flex-grow: 1;
 }
 .card__cta {
     display: inline-block;
@@ -499,7 +499,7 @@ section {
 
     background: var(--color-bg-alt);
     border-radius: var(--border-radius);
-    border: 3px solid var(--color-accent); /* Borde más fuerte */
+    border: 3px solid var(--color-accent); /* Borde más fuerte y visible */
 
     box-shadow: 0 0 40px rgba(255, 120, 60, 0.2);
 
@@ -536,7 +536,7 @@ section {
 /* Estilos para la carta del jugador (Ajuste de altura para consistencia) */
 .card-player {
     min-width: 280px;
-    height: 420px; /* Consistente con la card estándar */
+    height: 420px;
 }
 
 .player-avatar {
@@ -702,5 +702,26 @@ footer {
   }
   .header-actions .btn-contact-header {
     display: none;
+  }
+}
+
+
+
+/* ========== 5. RESPONSIVE (Adición para Scroll Horizontal de Cards) ========== */
+@media (max-width: 768px) {
+  /* ... (estilos existentes) ... */
+
+  /* NUEVO: Permite el scroll horizontal de las tarjetas en móviles */
+  .carousel-track-container {
+    overflow-x: auto; /* Habilita el scroll horizontal si el contenido desborda */
+    -webkit-overflow-scrolling: touch; /* Mejora la inercia del scroll en iOS */
+    padding-bottom: 15px; /* Espacio para que la barra de scroll no tape las cards */
+  }
+
+  /* Ajuste para que el track no use flex-wrap y permita el scroll */
+  .carousel-track {
+    /* Desactivar el ajuste automático para forzar el scroll horizontal */
+    flex-wrap: nowrap;
+    justify-content: flex-start; /* Asegura que las tarjetas empiecen desde la izquierda */
   }
 }
